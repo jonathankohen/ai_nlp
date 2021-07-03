@@ -1,0 +1,25 @@
+{% extends 'index.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form
+                action="{% url 'regex' %}"
+                class="form-group widthx"
+                method="POST"
+            >
+                {% csfr_token %}
+                <div class="mb-3">
+                    <label for="regex" class="form-label">Enter text</label>
+                    <textarea
+                        class="form-control"
+                        id="regex"
+                        name="regex"
+                        placeholder="Please enter text that will be filtered for U.S. formatted phone numbers"
+                        rows="3"
+                    ></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
